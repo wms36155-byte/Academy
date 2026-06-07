@@ -9,7 +9,7 @@ import { StatCardSkeleton } from '@/components/shared/Skeleton';
 import Navbar from '@/components/shared/Navbar';
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  BarChart, Bar, Legend
+  BarChart, Bar,
 } from 'recharts';
 import Link from 'next/link';
 
@@ -58,12 +58,12 @@ export default function DashboardPage() {
   const recentStudents = [...students].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).slice(0, 5);
 
   const stats = [
-    { label: 'Jami talabalar', value: students.length, sub: `${activeStudents} ta faol`, icon: Users, color: 'bg-blue-500', light: 'bg-blue-50', trend: '+12%', up: true },
-    { label: "Jami o'qituvchilar", value: teachers.length, sub: 'Barcha mutaxassislar', icon: GraduationCap, color: 'bg-violet-500', light: 'bg-violet-50', trend: '+2', up: true },
-    { label: 'Faol guruhlar', value: activeGroups, sub: `${groups.length} ta jami`, icon: BookOpen, color: 'bg-emerald-500', light: 'bg-emerald-50', trend: 'Barqaror', up: true },
-    { label: 'Oylik tushum', value: formatCurrency(monthlyRevenue), sub: 'Noyabr 2024', icon: TrendingUp, color: 'bg-amber-500', light: 'bg-amber-50', trend: '+8%', up: true },
-    { label: 'Qarzdor talabalar', value: debtors, sub: "To'lov muddati o'tgan", icon: AlertCircle, color: 'bg-rose-500', light: 'bg-rose-50', trend: '-3', up: false },
-    { label: 'Davomat foizi', value: `${attendanceRate}%`, sub: 'Oxirgi 30 kun', icon: CheckCircle, color: 'bg-teal-500', light: 'bg-teal-50', trend: '+2%', up: true },
+    { label: 'Jami talabalar', value: students.length, sub: `${activeStudents} ta faol`, icon: Users, light: 'bg-blue-50', iconColor: 'text-blue-600', trend: '+12%', up: true },
+    { label: "Jami o'qituvchilar", value: teachers.length, sub: 'Barcha mutaxassislar', icon: GraduationCap, light: 'bg-violet-50', iconColor: 'text-violet-600', trend: '+2', up: true },
+    { label: 'Faol guruhlar', value: activeGroups, sub: `${groups.length} ta jami`, icon: BookOpen, light: 'bg-emerald-50', iconColor: 'text-emerald-600', trend: 'Barqaror', up: true },
+    { label: 'Oylik tushum', value: formatCurrency(monthlyRevenue), sub: 'Noyabr 2024', icon: TrendingUp, light: 'bg-amber-50', iconColor: 'text-amber-600', trend: '+8%', up: true },
+    { label: 'Qarzdor talabalar', value: debtors, sub: "To'lov muddati o'tgan", icon: AlertCircle, light: 'bg-rose-50', iconColor: 'text-rose-600', trend: '-3', up: false },
+    { label: 'Davomat foizi', value: `${attendanceRate}%`, sub: 'Oxirgi 30 kun', icon: CheckCircle, light: 'bg-teal-50', iconColor: 'text-teal-600', trend: '+2%', up: true },
   ];
 
   return (
@@ -79,7 +79,7 @@ export default function DashboardPage() {
               <div key={stat.label} className="stat-card">
                 <div className="flex items-start justify-between mb-4">
                   <div className={`w-12 h-12 ${stat.light} rounded-2xl flex items-center justify-center`}>
-                    <stat.icon className={`text-${stat.color.split('-')[1]}-600`} size={22} />
+                    <stat.icon className={stat.iconColor} size={22} />
                   </div>
                   <div className={`flex items-center gap-1 text-xs font-semibold px-2 py-1 rounded-full ${stat.up ? 'text-emerald-700 bg-emerald-50' : 'text-rose-700 bg-rose-50'}`}>
                     {stat.up ? <ArrowUpRight size={13} /> : <ArrowDownRight size={13} />}
@@ -114,8 +114,11 @@ export default function DashboardPage() {
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                 <XAxis dataKey="month" tick={{ fontSize: 12, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
-                <YAxis tickFormatter={(v) => `${(v / 1000000).toFixed(0)}M`} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
-                <Tooltip formatter={(v: number) => [formatCurrency(v), 'Tushum']} contentStyle={{ borderRadius: 12, border: 'none', boxShadow: '0 4px 24px rgba(0,0,0,0.1)', fontSize: 12 }} />
+                <YAxis tickFormatter={(v: number) => `${(v / 1000000).toFixed(0)}M`} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
+                <Tooltip
+                  formatter={(v) => [formatCurrency(Number(v)), 'Tushum']}
+                  contentStyle={{ borderRadius: 12, border: 'none', boxShadow: '0 4px 24px rgba(0,0,0,0.1)', fontSize: 12 }}
+                />
                 <Area type="monotone" dataKey="tushumlar" stroke="#6366f1" strokeWidth={2.5} fill="url(#colorRevenue)" dot={{ fill: '#6366f1', strokeWidth: 0, r: 4 }} activeDot={{ r: 6 }} />
               </AreaChart>
             </ResponsiveContainer>
@@ -142,7 +145,6 @@ export default function DashboardPage() {
 
         {/* Recent data */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {/* Recent payments */}
           <div className="card">
             <div className="flex items-center justify-between p-5 border-b border-slate-100">
               <h3 className="text-sm font-bold text-slate-900">So'nggi to'lovlar</h3>
@@ -154,7 +156,7 @@ export default function DashboardPage() {
                 : recentPayments.map(p => (
                   <div key={p.id} className="flex items-center gap-3 px-5 py-3.5 hover:bg-slate-50 transition-colors">
                     <div className="w-9 h-9 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-700 text-xs font-bold flex-shrink-0">
-                      {p.studentName.split(' ').map(n => n[0]).join('')}
+                      {p.studentName.split(' ').map((n: string) => n[0]).join('')}
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-semibold text-slate-800 truncate">{p.studentName}</p>
@@ -162,7 +164,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="text-right">
                       <p className="text-sm font-bold text-slate-900">{formatCurrency(p.amount)}</p>
-                      <span className={`badge text-xs ${getStatusColor(p.status)}`}>{getStatusLabel(p.status)}</span>
+                      <span className={`badge ${getStatusColor(p.status)}`}>{getStatusLabel(p.status)}</span>
                     </div>
                   </div>
                 ))
@@ -170,7 +172,6 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* Recent students */}
           <div className="card">
             <div className="flex items-center justify-between p-5 border-b border-slate-100">
               <h3 className="text-sm font-bold text-slate-900">Yangi talabalar</h3>
@@ -182,7 +183,7 @@ export default function DashboardPage() {
                 : recentStudents.map(s => (
                   <div key={s.id} className="flex items-center gap-3 px-5 py-3.5 hover:bg-slate-50 transition-colors">
                     <div className="w-9 h-9 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 text-xs font-bold flex-shrink-0">
-                      {s.fullName.split(' ').map(n => n[0]).join('')}
+                      {s.fullName.split(' ').map((n: string) => n[0]).join('')}
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-semibold text-slate-800 truncate">{s.fullName}</p>
