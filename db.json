@@ -1,0 +1,67 @@
+{
+  "students": [
+    { "id": "1", "fullName": "Aziz Karimov", "phone": "+998901234567", "parentPhone": "+998901234500", "age": 18, "gender": "male", "course": "Frontend Development", "group": "FE-01", "groupId": "1", "address": "Toshkent, Yunusobod", "image": "", "status": "active", "createdAt": "2024-01-15" },
+    { "id": "2", "fullName": "Malika Yusupova", "phone": "+998901234568", "parentPhone": "+998901234501", "age": 20, "gender": "female", "course": "Backend Development", "group": "BE-01", "groupId": "2", "address": "Toshkent, Chilonzor", "image": "", "status": "active", "createdAt": "2024-01-20" },
+    { "id": "3", "fullName": "Jasur Nazarov", "phone": "+998901234569", "parentPhone": "+998901234502", "age": 17, "gender": "male", "course": "Frontend Development", "group": "FE-01", "groupId": "1", "address": "Toshkent, Mirzo Ulugbek", "image": "", "status": "active", "createdAt": "2024-02-01" },
+    { "id": "4", "fullName": "Nodira Rashidova", "phone": "+998901234570", "parentPhone": "+998901234503", "age": 22, "gender": "female", "course": "UI/UX Design", "group": "UX-01", "groupId": "3", "address": "Toshkent, Shayxontohur", "image": "", "status": "inactive", "createdAt": "2024-02-10" },
+    { "id": "5", "fullName": "Bobur Ergashev", "phone": "+998901234571", "parentPhone": "+998901234504", "age": 19, "gender": "male", "course": "Mobile Development", "group": "MOB-01", "groupId": "4", "address": "Toshkent, Olmazor", "image": "", "status": "active", "createdAt": "2024-02-15" },
+    { "id": "6", "fullName": "Shahlo Mirzayeva", "phone": "+998901234572", "parentPhone": "+998901234505", "age": 21, "gender": "female", "course": "Frontend Development", "group": "FE-02", "groupId": "5", "address": "Toshkent, Bektemir", "image": "", "status": "active", "createdAt": "2024-03-01" },
+    { "id": "7", "fullName": "Ulugbek Xolmatov", "phone": "+998901234573", "parentPhone": "+998901234506", "age": 23, "gender": "male", "course": "Backend Development", "group": "BE-01", "groupId": "2", "address": "Toshkent, Sergeli", "image": "", "status": "active", "createdAt": "2024-03-10" },
+    { "id": "8", "fullName": "Dilnoza Saidova", "phone": "+998901234574", "parentPhone": "+998901234507", "age": 18, "gender": "female", "course": "UI/UX Design", "group": "UX-01", "groupId": "3", "address": "Toshkent, Uchtepa", "image": "", "status": "active", "createdAt": "2024-03-15" },
+    { "id": "9", "fullName": "Murod Tursunov", "phone": "+998901234575", "parentPhone": "+998901234508", "age": 20, "gender": "male", "course": "Mobile Development", "group": "MOB-01", "groupId": "4", "address": "Toshkent, Yakkasaroy", "image": "", "status": "active", "createdAt": "2024-04-01" },
+    { "id": "10", "fullName": "Feruza Aliyeva", "phone": "+998901234576", "parentPhone": "+998901234509", "age": 19, "gender": "female", "course": "Frontend Development", "group": "FE-02", "groupId": "5", "address": "Toshkent, Yashnobod", "image": "", "status": "inactive", "createdAt": "2024-04-10" },
+    { "id": "11", "fullName": "Otabek Normatov", "phone": "+998901234577", "parentPhone": "+998901234510", "age": 22, "gender": "male", "course": "Backend Development", "group": "BE-02", "groupId": "6", "address": "Toshkent, Eski shahar", "image": "", "status": "active", "createdAt": "2024-04-15" },
+    { "id": "12", "fullName": "Zulfiya Qosimova", "phone": "+998901234578", "parentPhone": "+998901234511", "age": 20, "gender": "female", "course": "UI/UX Design", "group": "UX-02", "groupId": "7", "address": "Toshkent, Yunusobod", "image": "", "status": "active", "createdAt": "2024-05-01" }
+  ],
+  "teachers": [
+    { "id": "1", "fullName": "Sardor Toshmatov", "phone": "+998901111111", "specialization": "Frontend Development", "salary": 5000000, "image": "", "experience": 5, "groups": ["1", "5"], "createdAt": "2023-09-01" },
+    { "id": "2", "fullName": "Kamola Ismoilova", "phone": "+998901111112", "specialization": "Backend Development", "salary": 6000000, "image": "", "experience": 7, "groups": ["2", "6"], "createdAt": "2023-09-01" },
+    { "id": "3", "fullName": "Jamshid Valiyev", "phone": "+998901111113", "specialization": "UI/UX Design", "salary": 4500000, "image": "", "experience": 4, "groups": ["3", "7"], "createdAt": "2023-10-01" },
+    { "id": "4", "fullName": "Madina Umarova", "phone": "+998901111114", "specialization": "Mobile Development", "salary": 5500000, "image": "", "experience": 6, "groups": ["4"], "createdAt": "2023-10-15" },
+    { "id": "5", "fullName": "Alisher Qodirov", "phone": "+998901111115", "specialization": "Data Science", "salary": 7000000, "image": "", "experience": 8, "groups": [], "createdAt": "2023-11-01" },
+    { "id": "6", "fullName": "Barno Xasanova", "phone": "+998901111116", "specialization": "DevOps", "salary": 6500000, "image": "", "experience": 5, "groups": [], "createdAt": "2024-01-01" }
+  ],
+  "groups": [
+    { "id": "1", "name": "FE-01", "course": "Frontend Development", "teacherId": "1", "startDate": "2024-01-15", "endDate": "2024-07-15", "lessonDays": ["Dushanba", "Chorshanba", "Juma"], "lessonTime": "09:00", "room": "101-xona", "studentsCount": 2, "status": "active" },
+    { "id": "2", "name": "BE-01", "course": "Backend Development", "teacherId": "2", "startDate": "2024-01-20", "endDate": "2024-07-20", "lessonDays": ["Seshanba", "Payshanba", "Shanba"], "lessonTime": "11:00", "room": "102-xona", "studentsCount": 2, "status": "active" },
+    { "id": "3", "name": "UX-01", "course": "UI/UX Design", "teacherId": "3", "startDate": "2024-02-01", "endDate": "2024-08-01", "lessonDays": ["Dushanba", "Chorshanba"], "lessonTime": "14:00", "room": "201-xona", "studentsCount": 2, "status": "active" },
+    { "id": "4", "name": "MOB-01", "course": "Mobile Development", "teacherId": "4", "startDate": "2024-02-15", "endDate": "2024-08-15", "lessonDays": ["Seshanba", "Payshanba"], "lessonTime": "16:00", "room": "202-xona", "studentsCount": 2, "status": "active" },
+    { "id": "5", "name": "FE-02", "course": "Frontend Development", "teacherId": "1", "startDate": "2024-03-01", "endDate": "2024-09-01", "lessonDays": ["Dushanba", "Chorshanba", "Juma"], "lessonTime": "10:00", "room": "101-xona", "studentsCount": 2, "status": "active" },
+    { "id": "6", "name": "BE-02", "course": "Backend Development", "teacherId": "2", "startDate": "2024-03-10", "endDate": "2024-09-10", "lessonDays": ["Seshanba", "Payshanba"], "lessonTime": "13:00", "room": "102-xona", "studentsCount": 1, "status": "active" },
+    { "id": "7", "name": "UX-02", "course": "UI/UX Design", "teacherId": "3", "startDate": "2024-04-01", "endDate": "2024-10-01", "lessonDays": ["Dushanba", "Chorshanba", "Juma"], "lessonTime": "15:00", "room": "201-xona", "studentsCount": 1, "status": "active" }
+  ],
+  "attendance": [
+    { "id": "1", "studentId": "1", "groupId": "1", "date": "2024-11-01", "status": "present" },
+    { "id": "2", "studentId": "2", "groupId": "2", "date": "2024-11-01", "status": "present" },
+    { "id": "3", "studentId": "3", "groupId": "1", "date": "2024-11-01", "status": "absent" },
+    { "id": "4", "studentId": "4", "groupId": "3", "date": "2024-11-01", "status": "late" },
+    { "id": "5", "studentId": "5", "groupId": "4", "date": "2024-11-01", "status": "present" },
+    { "id": "6", "studentId": "1", "groupId": "1", "date": "2024-11-04", "status": "present" },
+    { "id": "7", "studentId": "2", "groupId": "2", "date": "2024-11-04", "status": "late" },
+    { "id": "8", "studentId": "3", "groupId": "1", "date": "2024-11-04", "status": "present" },
+    { "id": "9", "studentId": "6", "groupId": "5", "date": "2024-11-04", "status": "present" },
+    { "id": "10", "studentId": "7", "groupId": "2", "date": "2024-11-04", "status": "absent" },
+    { "id": "11", "studentId": "8", "groupId": "3", "date": "2024-11-05", "status": "present" },
+    { "id": "12", "studentId": "9", "groupId": "4", "date": "2024-11-05", "status": "present" },
+    { "id": "13", "studentId": "10", "groupId": "5", "date": "2024-11-05", "status": "absent" },
+    { "id": "14", "studentId": "11", "groupId": "6", "date": "2024-11-05", "status": "present" },
+    { "id": "15", "studentId": "12", "groupId": "7", "date": "2024-11-06", "status": "late" }
+  ],
+  "payments": [
+    { "id": "1", "studentId": "1", "studentName": "Aziz Karimov", "amount": 800000, "paymentDate": "2024-11-01", "paymentMethod": "cash", "status": "paid", "month": "Noyabr 2024" },
+    { "id": "2", "studentId": "2", "studentName": "Malika Yusupova", "amount": 900000, "paymentDate": "2024-11-02", "paymentMethod": "card", "status": "paid", "month": "Noyabr 2024" },
+    { "id": "3", "studentId": "3", "studentName": "Jasur Nazarov", "amount": 800000, "paymentDate": "2024-11-03", "paymentMethod": "transfer", "status": "paid", "month": "Noyabr 2024" },
+    { "id": "4", "studentId": "4", "studentName": "Nodira Rashidova", "amount": 750000, "paymentDate": "2024-11-05", "paymentMethod": "cash", "status": "pending", "month": "Noyabr 2024" },
+    { "id": "5", "studentId": "5", "studentName": "Bobur Ergashev", "amount": 850000, "paymentDate": "2024-11-06", "paymentMethod": "card", "status": "paid", "month": "Noyabr 2024" },
+    { "id": "6", "studentId": "6", "studentName": "Shahlo Mirzayeva", "amount": 800000, "paymentDate": "2024-11-07", "paymentMethod": "cash", "status": "paid", "month": "Noyabr 2024" },
+    { "id": "7", "studentId": "7", "studentName": "Ulugbek Xolmatov", "amount": 900000, "paymentDate": "2024-11-08", "paymentMethod": "transfer", "status": "paid", "month": "Noyabr 2024" },
+    { "id": "8", "studentId": "8", "studentName": "Dilnoza Saidova", "amount": 750000, "paymentDate": "2024-11-09", "paymentMethod": "card", "status": "paid", "month": "Noyabr 2024" },
+    { "id": "9", "studentId": "9", "studentName": "Murod Tursunov", "amount": 850000, "paymentDate": "2024-11-10", "paymentMethod": "cash", "status": "paid", "month": "Noyabr 2024" },
+    { "id": "10", "studentId": "10", "studentName": "Feruza Aliyeva", "amount": 800000, "paymentDate": "2024-11-01", "paymentMethod": "card", "status": "overdue", "month": "Oktyabr 2024" },
+    { "id": "11", "studentId": "11", "studentName": "Otabek Normatov", "amount": 900000, "paymentDate": "2024-11-12", "paymentMethod": "cash", "status": "paid", "month": "Noyabr 2024" },
+    { "id": "12", "studentId": "12", "studentName": "Zulfiya Qosimova", "amount": 750000, "paymentDate": "2024-11-01", "paymentMethod": "transfer", "status": "pending", "month": "Noyabr 2024" },
+    { "id": "13", "studentId": "1", "studentName": "Aziz Karimov", "amount": 800000, "paymentDate": "2024-10-01", "paymentMethod": "cash", "status": "paid", "month": "Oktyabr 2024" },
+    { "id": "14", "studentId": "2", "studentName": "Malika Yusupova", "amount": 900000, "paymentDate": "2024-10-03", "paymentMethod": "card", "status": "paid", "month": "Oktyabr 2024" },
+    { "id": "15", "studentId": "3", "studentName": "Jasur Nazarov", "amount": 800000, "paymentDate": "2024-10-05", "paymentMethod": "cash", "status": "paid", "month": "Oktyabr 2024" }
+  ]
+}

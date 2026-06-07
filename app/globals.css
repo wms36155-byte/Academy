@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: #f1f5f9; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+}
+
+@layer components {
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #475569;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .sidebar-link:hover { background-color: #eef2ff; color: #4338ca; }
+  .sidebar-link.active { background-color: #4f46e5; color: white; box-shadow: 0 4px 14px rgba(79,70,229,0.3); }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    background-color: #4f46e5;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    transition: all 0.2s;
+    box-shadow: 0 1px 3px rgba(79,70,229,0.3);
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background-color: #4338ca; }
+  .btn-primary:active { transform: scale(0.95); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    background-color: white;
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .btn-secondary:hover { background-color: #f8fafc; }
+  .btn-secondary:active { transform: scale(0.95); }
+
+  .btn-danger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    background-color: #dc2626;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    border: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .btn-danger:hover { background-color: #b91c1c; }
+  .btn-danger:active { transform: scale(0.95); }
+
+  .input-field {
+    width: 100%;
+    padding: 0.625rem 1rem;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    color: #0f172a;
+    outline: none;
+    transition: all 0.2s;
+  }
+  .input-field::placeholder { color: #94a3b8; }
+  .input-field:focus { border-color: transparent; box-shadow: 0 0 0 2px #6366f1; }
+
+  .select-field {
+    width: 100%;
+    padding: 0.625rem 1rem;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    color: #0f172a;
+    outline: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .select-field:focus { border-color: transparent; box-shadow: 0 0 0 2px #6366f1; }
+
+  .card {
+    background-color: white;
+    border-radius: 1rem;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .stat-card {
+    background-color: white;
+    border-radius: 1rem;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+  .stat-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid;
+  }
+
+  .table-header {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .table-cell { padding: 1rem; font-size: 0.875rem; color: #374151; }
+
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(4px);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .modal-content {
+    background: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 32rem;
+    animation: scaleIn 0.2s ease-out;
+  }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.5rem;
+}
