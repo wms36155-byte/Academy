@@ -193,7 +193,7 @@ export default function ReportsPage() {
               <h3 className="text-sm font-bold text-slate-900 mb-5">Davomat taqsimoti</h3>
               <ResponsiveContainer width="100%" height={300}>
                 <PieChart>
-                  <Pie data={attData} cx="50%" cy="50%" outerRadius={110} paddingAngle={3} dataKey="value" label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}>
+                  <Pie data={attData} cx="50%" cy="50%" outerRadius={110} paddingAngle={3} dataKey="value" label={(entry) => `${entry.name}: ${entry.value}`}>
                     {attData.map((_, i) => <Cell key={i} fill={['#10b981', '#ef4444', '#f59e0b'][i]} />)}
                   </Pie>
                   <Tooltip contentStyle={{ borderRadius: 12, border: 'none', boxShadow: '0 4px 24px rgba(0,0,0,0.08)', fontSize: 12 }} />
@@ -226,7 +226,7 @@ export default function ReportsPage() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
                   <XAxis dataKey="name" tick={{ fontSize: 12, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
                   <YAxis tickFormatter={v => `${(v / 1000000).toFixed(0)}M`} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
-                  <Tooltip formatter={(v: number) => [formatCurrency(v), 'Summa']} contentStyle={{ borderRadius: 12, border: 'none', boxShadow: '0 4px 24px rgba(0,0,0,0.08)', fontSize: 12 }} />
+                  <Tooltip formatter={(v) => [formatCurrency(Number(v)), 'Summa']} contentStyle={{ borderRadius: 12, border: 'none', boxShadow: '0 4px 24px rgba(0,0,0,0.08)', fontSize: 12 }} />
                   <Bar dataKey="value" radius={[8, 8, 0, 0]}>
                     {payMethodData.map((_, i) => <Cell key={i} fill={COLORS[i]} />)}
                   </Bar>
